@@ -1,0 +1,10 @@
+0.5 20
+ 0.1   30  
+
+    0.1   30                                                 ! *** Lower Threshold and Level (e.g. 0.01    40)
+   0.01 40                                                  ! *** Upper Threshold (e.g. 1E15  70 for the first Chanel))
+
+
+
+ 1E15  70                                                ! *** Upper Threshold (e.g. 1E15  70 for the first Chanel))
+
