@@ -1,7 +1,3 @@
-#ignoring databases
-HITEMP/
-HITRAN16/
-
 #vscode settings
 .vscode
 
