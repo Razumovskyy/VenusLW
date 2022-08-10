@@ -23,6 +23,8 @@ SUBROUTINE FLUX_H(FLUXUP,FLUXDO,N_SEP) !( date of 12 April,2002 )
      ,Emis_Up(ND,NANGLE),Emis_Down(ND,NANGLE),&
          TAUMA(ND),E_TAU(ND,NANGLE),FLU(ND,20),FLD(ND,20)
 	common/R_A/VSTART,SEP(0:20),KISH(10250)
+	save TZI, CL0, CL1, WEIGHT, COSINE, TAUMA
+	save JZM, JZM_1
 		DATA IBEG/0/	&
 !* ---------- 1-Rays for angle integration ------------- *
 !*        ,COSINE/0.6024096/,WEIGHT/0.83/  ! 1/1.66    1.66/2  

@@ -1,5 +1,5 @@
   The atmospheric conditions from file = ./Atmospheres/
-  The LBL data base from file = ./HITRAN16/            
+  The LBL data base from file = /srv/HITRAN1
  TRP_CO2.330ppm                                                                  
  The number of gases (NGAS) :            1
  The number of levels (JMAX) :          101

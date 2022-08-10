@@ -1,7 +1,7 @@
 !! 3 Nov.,2001. ! Attention: NO SELF part in the CKD 2.4
 module INITIAL ! Information from atmospheric profile
     parameter (NTH = 20481, NCOMP = 49)  ! #### DLT8
-    character LINE_PATH*23, ATM_PATH*14
+    character LINE_PATH*12, ATM_PATH*14
 	character*80 TITLE
 	character*5 MOLECULE(NCOMP)
     integer*4 :: NGAS, JMAX 
@@ -973,16 +973,12 @@ END IF
 	common/GASES/ COMPONENT(NMOL)
 	common/FILES/FNAME(NMOL), NZ(NMOL)
 		
-		do ijk=1, 3
-			WRITE(*,444) FNAME(ijk) !***
-		end do
-		444 format(A20)
-		
+
 		DO 100 K = 1, NMOL
 !*
 	IF(MOLECULE == COMPONENT(K))THEN
 		OPEN(IDENT, ACCESS='DIRECT', FORM='UNFORMATTED',	&
-			RECL=36, FILE=FNAME(K))! 36 for OTHER FORTRANs
+			RECL=36, FILE="/srv/HITRAN16/"//FNAME(K))! 36 for OTHER FORTRANs
 	NZCOMP	= K
 	GO TO 10
 								ENDIF
@@ -1021,8 +1017,6 @@ END IF
 !************** MAIN PART : READING *********************
 		READ(IDENT, REC = NN ) VV
 		READ(IDENT, REC = NF ) VVV
-!*	WRITE(*,*)VSTART,VFINISH, VV,VVV,NN,NF
-!*		PAUSE
 	IF(VV < VSTART .OR. VVV > VFINISH)THEN ! There are no lines in interval :
 	CLOSE(IDENT)
 	RETURN
@@ -1062,9 +1056,9 @@ READ(IDENT,REC=J)V(I),S(I),ALFA(I),ALFAS(I),E(I),FACT(I),NISO(I),SHIFT(I)
 !*****************************
 	BLOCK DATA INIT2016 ! for HITRAN-2016
 ! *** ATTENTION: at present only 12 gases from HITRAN-2016.!!! *** ! 
-	PARAMETER ( NMOL = 49)
-	CHARACTER*5 COMPONENT
-	CHARACTER*17 FNAME
+	PARAMETER ( NMOL = 49) !49 molecules in HITRAN considered
+	CHARACTER*5 COMPONENT  !names of molecules
+	CHARACTER*17 FNAME     !names of files in HITRAN16 folder
 !*
 	common/GASES/ COMPONENT(NMOL)
 	common/FILES/FNAME(NMOL), NZ(NMOL)
@@ -4998,37 +4992,6 @@ BLOCK DATA ST_SUM2017 ! Parameterization by R.R. Gamache
 
 ! -------------------------------------------------------------------------------
 END
-
-      SUBROUTINE DBASE_2016(LINE_PATH)
-!* ------------------------------------------------------------ *
-!*  Subprogram to identify full names of the files with         *
-!*                 SPECTRAL database            24 August.,2001 *
-!* ------------------------------------------------------------ *
-      PARAMETER (NMOL = 49)
-!*.........Path parameters separator for UNIX medium:
-     CHARACTER*2  MEDIA/"/ "/
-!*.........Path parameters separator for DOS  medium:
-!*      CHARACTER*2  MEDIA/"\ "/
-!*
-      CHARACTER*23 LINE_PATH
-      CHARACTER*17 FNAME 
-	  character*80 FNAMEID, FRAB(NMOL)
-!*
-      common /FILES/FNAME(NMOL),NZ(NMOL)
-!*
-      DO 1 I=1,NMOL
-!*
-  1     WRITE(FRAB(I)(1:23),'(A23)')LINE_PATH
-!*
-      NBEG = INDEX(FRAB(1),MEDIA)
-!*
-      DO 2   I = 1, NMOL
-!*
-      WRITE( FRAB(I)(NBEG+1:NBEG+9), '(A9)' ) FNAME(I)
-!*
-2     FNAME(I) = FRAB(I)
-!*
-      END
 
 !********************************************************************************
 !* Program for Voigt function calculations *									*

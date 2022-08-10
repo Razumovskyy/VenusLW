@@ -52,7 +52,7 @@ open (89,file=' speH__separ.'//N_K)
 !OPEN (889, file=' speH_separ2.'//N_K)
 open(99, FILE='k_coef.in')
 write(99, '(A)')'./Atmospheres/'
-write(99,'(A)')'./HITRAN16/'
+write(99,'(A)')'/srv/HITRAN16/'
 CLOSE(99)
 ! ----------------------------------------------------------------- !
 CALL ATM_PROF_READING(NATT)

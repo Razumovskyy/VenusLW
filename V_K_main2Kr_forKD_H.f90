@@ -53,7 +53,7 @@ USE INITIAL
 !**********************************************************
 		VFINISH=VSTART+10.D0
 !*............................Search for accont molecules papameters:
-                CALL DBASE_2016(LINE_PATH) 
+!                CALL DBASE_2016(LINE_PATH) 
        vfish=vstart
           WRITE(*,*)' H2O L+F only ! NO 02,N2 continums '
 
@@ -337,10 +337,6 @@ END IF
 ! ###################################################
 ! Separation - when RABMA is READY!!!
            IF(JLEV .EQ. JMAX) THEN
-        		write(*,*) 'vfish=', VFISH, 'N_SEP', N_SEP
-				write(*,*) 'LEV_SEP=', LEV_SEP
-				write(*,*) 'SEP=', SEP
-				pause 1
 				IK = NT
              	IK_2 = IK-2
               	JH=0
