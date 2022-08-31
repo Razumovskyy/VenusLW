@@ -23,8 +23,9 @@ SUBROUTINE FLUX_H(FLUXUP,FLUXDO,N_SEP) !( date of 12 April,2002 )
      ,Emis_Up(ND,NANGLE),Emis_Down(ND,NANGLE),&
          TAUMA(ND),E_TAU(ND,NANGLE),FLU(ND,20),FLD(ND,20)
 	COMMON/R_A/VSTART,SEP(0:20),KISH(10250)
-	SAVE TZI,CL0,CL1,WEIGHT,COSINE
-		DATA IBEG/0/	&
+	SAVE TZI,CL0,CL1,WEIGHT,COSINE,TAUMA
+	SAVE JZM, JZM_1
+	DATA IBEG/0/	&
 !* ---------- 1-Rays for angle integration ------------- *
 !*        ,COSINE/0.6024096/,WEIGHT/0.83/  ! 1/1.66    1.66/2  
 !* ---------- 3-Rays for angle integration ------------- *
@@ -37,6 +38,11 @@ SUBROUTINE FLUX_H(FLUXUP,FLUXDO,N_SEP) !( date of 12 April,2002 )
 	PLANK2(V1,ttt1)=3.7403E-8*V1**3/(DEXP(1.43868*V1/ttt1)-1.)*2.
 !*	* /(2.*PI)						! for INTENSITIES
 	VSREL=VSTART
+			
+	DO J=JMAX,1,-1 ! 	
+		write(*,*) j, RABMA(1, J); pause 77
+	end DO
+
 		IF(IBEG == 0)THEN
                         JZM=JMAX
          IF(JZM>ND)THEN
@@ -101,6 +107,7 @@ SUBROUTINE FLUX_H(FLUXUP,FLUXDO,N_SEP) !( date of 12 April,2002 )
 !C
 !C *** STEP BY STEP
 !  upon the wave number intervals where Planck=const ***
+
  J_STEP=0
  DO  KKK = 1, KMAX
   J_STEP=J_STEP+1
@@ -114,6 +121,7 @@ SUBROUTINE FLUX_H(FLUXUP,FLUXDO,N_SEP) !( date of 12 April,2002 )
 		T=TZI(JJ)
 		PL(JJ)=PLANK2(FREC,T)
 		END DO
+!write(*,*) 'PL', pl ; pause 0
                 FLU=0.D0
                 FLD=0.D0
 
@@ -141,7 +149,9 @@ SUBROUTINE FLUX_H(FLUXUP,FLUXDO,N_SEP) !( date of 12 April,2002 )
      DO IAN=1,NANGLE
      E_TAU(JZM,IAN)=1.D0
      END DO        
-    DO J=JZM_1,1,-1 ! 
+    
+
+	 DO J=JZM_1,1,-1 ! 
     TAUMA(J)=TAUMA(J+1) +RABMA(II+IFT,J)*CL0(J+1) &
                        +RABMA(II+IFT,J+1)*CL1(J+1)
      TAT=-(TAUMA(J)-TAUMA(J+1))
@@ -149,6 +159,7 @@ SUBROUTINE FLUX_H(FLUXUP,FLUXDO,N_SEP) !( date of 12 April,2002 )
      E_TAU(J,IAN)=DEXP(TAT/COSINE(IAN))
      END DO
     END DO
+
 
 ! ------------- Emissivities --------------------
 !  Downward 
