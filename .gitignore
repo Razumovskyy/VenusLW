@@ -1,3 +1,9 @@
+# Spectral databases
+PT_CALC
+
+#vscode settings
+.vscode
+
 # Prerequisites
 *.d
 
