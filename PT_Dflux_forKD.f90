@@ -39,9 +39,9 @@ SUBROUTINE FLUX_H(FLUXUP,FLUXDO,N_SEP) !( date of 12 April,2002 )
 !*	* /(2.*PI)						! for INTENSITIES
 	VSREL=VSTART
 			
-	DO J=JMAX,1,-1 ! 	
-		write(*,*) j, RABMA(1, J); pause 77
-	end DO
+!	DO J=JMAX,1,-1 ! 	
+!		write(*,*) j, RABMA(1, J); pause 77
+!	end DO
 
 		IF(IBEG == 0)THEN
                         JZM=JMAX

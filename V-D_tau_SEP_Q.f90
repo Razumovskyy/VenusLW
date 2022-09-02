@@ -12,7 +12,7 @@ DIMENSION D_TAU(JDI),C_K(JDI),FDO_LBL(JDI),FUP_LBL(JDI),Q_LBL(JDI),FDO_KDS(JDI),
 	COMMON/CHNN/CHANNEL_NUMBER0
 !***         Fit Setting        ***
 !********** BAND SETTINGS **********!
-OPEN(2001,FILE='BAND_V1-V2.PT')
+OPEN(2001,FILE='Band_V1-V2.PT')
 READ(2001,2002)CHANNEL_NUMBER0
 READ(2001,2002)BAN
 2002 FORMAT(A3)
@@ -24,7 +24,7 @@ READ(2001,2003)FI
 CLOSE(2001)
 !****************************************!
 
-ATM_PROF(1)='./ATMOSPHERES/'//FI
+ATM_PROF(1)='./Atmospheres/'//FI
   LBL(1)='Flux-Term'//CHANNEL_NUMBER0
   K_FILE(1)='K(Z).'//CHANNEL_NUMBER0
 
@@ -89,7 +89,7 @@ ATM_PROF(1)='./ATMOSPHERES/'//FI
                      WRITE(8,*)Z(L),FKDS,FLBL
                              END DO
                        CLOSE(8)
-                 	result=RUNQQ('ToDraw.exe',filname)
+!                 	result=RUNQQ('ToDraw.exe',filname)
       !VVV  	if(result==-1_2)stop
 !* ------ Q ---------------*
                       FILNAME='_COOLING'
@@ -104,7 +104,7 @@ ATM_PROF(1)='./ATMOSPHERES/'//FI
                     WRITE(8,*)Z(L),FKDS,FLBL
                             END DO
                       CLOSE(8)
-                	result=RUNQQ('ToDraw.exe',filname)
+!                	result=RUNQQ('ToDraw.exe',filname)
               	if(result==-1_2)stop
 !* ------ UP ---------------*
                        FILNAME='_Fup_'
@@ -117,7 +117,7 @@ ATM_PROF(1)='./ATMOSPHERES/'//FI
                     WRITE(8,*)Z(L),FKDS,FLBL
                             END DO
                       CLOSE(8)
-                	result=RUNQQ('ToDraw.exe',filname)
+!                	result=RUNQQ('ToDraw.exe',filname)
                    	if(result==-1_2)stop
            	if(result==-1_2)stop
 

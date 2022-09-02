@@ -43,9 +43,9 @@ CLOSE(491)
 RABMA(:,JN)=RK
 END DO
 
-do j=JMAX, 1, -1
-    write(*,*) j, RABMA(1,J) ; pause 777
-end do
+!do j=JMAX, 1, -1
+!    write(*,*) j, RABMA(1,J) ; pause 777
+!end do
 ! *** Separation - when RABMA is READY. ATTENTION- 1term ONLY!  *** !
 WRITE(*,*)LEV_SEP(1),SEP(1),(RABMA(JC,LEV_SEP(1)),JC=1,5)
 WRITE(*,*)LEV_SEP(2),SEP(2),(RABMA(JC,LEV_SEP(2)),JC=1,5)
