@@ -1,3 +1,0 @@
-0.0 50    
-0.0001 50
-# 0 - 0.0001 km^-1 on 50-th Level (intervals of absorption coefficients)
