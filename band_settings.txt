@@ -1,5 +1,5 @@
 __1  
 Ven    
-550.0D0    990.0D0     
-V1   
-CO2_gas_profile.dat 
+1000.0D0    1200.0D0     
+V1    
+CO2_gas_profile.dat    

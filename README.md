@@ -40,7 +40,7 @@ Precalculated spectral PT-tables located in /srv/PT_TABLES  directory.
 
     - **'Flux-Term_2'** is needed for calculation of k-terms in next steps. Fluxes are in W/m$^{2}$.
 
-    | Z (km) | Fd | Fu | Fd* | Fu* |
+    | Z (km) | Fd* | Fu* | Fd | Fu |
     | ------ | -- | -- | -- | -- |  
     | 0.0 | 0.1617E+02 | 0.1642E+02 | 0.3401E+01 | 0.3406E+01 |
     | 1.0 | 0.1506E+02 | 0.1554E+02 | 0.3180E+01 | 0.3189E+01 |
