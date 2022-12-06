@@ -1,5 +1,5 @@
-__3  
+__2  
 Ven    
 700.0D0    800.0D0     
-V1    
+VO    
 CO2_gas_profile.dat    
