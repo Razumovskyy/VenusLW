@@ -32,6 +32,7 @@ Precalculated spectral PT-tables located in /srv/PT_TABLES/  directory.
 
     - **0.0 1** &sdot; &sdot; &sdot; &sdot; &sdot; &sdot; &sdot; &sdot; &sdot; &sdot; &sdot; &sdot; &sdot; &sdot; &sdot; &sdot; &sdot; &sdot; &sdot; &sdot; &sdot; &sdot; &sdot; &sdot; &sdot; &sdot; &sdot; &sdot; &sdot; &sdot; &sdot; &sdot; &sdot; &sdot;                  first number -- lower threshold (smallest absorption coefficient), second number -- height level number
     - **1e15 50** &sdot; &sdot; &sdot; &sdot; &sdot; &sdot; &sdot; &sdot; &sdot; &sdot; &sdot; &sdot; &sdot; &sdot; &sdot; &sdot; &sdot; &sdot; &sdot; &sdot; &sdot; &sdot; &sdot; &sdot; &sdot; &sdot; &sdot; &sdot; &sdot; &sdot; &sdot; &sdot; &sdot; &sdot;                  first number -- upper threshold (largest absorption coefficient), second number -- height level number
+  
   In this file one can set lower and upper boundaries for spectral points to be selected during one iteration of obtaining k-terms. In the example presented we deliberately set 0.0 and 10$^{15}$ lower and upper thresholds. It means that all spectral points would be selected and one gets only one k-term over the whole interval 10 - 200 cm$^{-1}$. This results in a serious losing of accuracy, so one needs to decrease spectral boundaries in *channel_settings.txt* file and get more k-terms with bigger accuracy.
 
 3. <ins>Run executable</ins>: `./get1kd.out`
