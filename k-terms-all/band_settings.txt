@@ -1,7 +1,7 @@
 __3  
 Ven    
-700.0D0    800.0D0     
-V1    
+400.0D0    600.0D0     
+C2    
 CO2_gas_profile.dat    
   
 

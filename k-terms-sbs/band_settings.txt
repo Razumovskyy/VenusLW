@@ -1,5 +1,5 @@
 __1  
 Ven    
-10.0D0    200.0D0     
-H2  
-H2O_gas_profile.dat   
+400.0D0    600.0D0     
+S2  
+SO2_gas_profile.dat   

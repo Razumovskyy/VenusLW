@@ -23,5 +23,5 @@ if [ -f "_Fup_" ]; then
     rm _Fup_ 
 fi
  
-gfortran mod_pt_kd.f90 main_1step_pt_kd.f90 k_pt_kd.f90 dflux_pt_kd.f90 planck_separate_kd.f90 -o get1kd.out
-gfortran main_compare.f90 tau_to_flux_compare.f90 planck_compare.f90 -o compare.out 
+gfortran mod_pt_kd.f90 main_1step_pt_kd.f90 k_pt_kd.f90 dflux_pt_kd.f90 planck_separate_kd.f90 -o separate.out
+gfortran main_compare.f90 tau_to_flux_compare.f90 planck_compare.f90 -o get1kd.out 

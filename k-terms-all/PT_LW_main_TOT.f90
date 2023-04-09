@@ -32,7 +32,7 @@ OPEN(2001,FILE='channels_settings.txt')
 READ(2001,*)N_SEP   ! <***  NUMBER OF  K-terms!!!
       IF(N_SEP>15)THEN
       WRITE(*,*)' *** Number of Channels should be < 16 *** ', N_SEP, ' !!!'
-      PAUSE
+      STOP
       END IF 
 DO J=N_SEP,0,-1
 READ(2001,*)SEP(J),LEV_SEP(J)

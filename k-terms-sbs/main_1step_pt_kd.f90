@@ -1,8 +1,8 @@
 !******************************************************************
 !* This program creates only 1 K-terms  using PT-tables*
 !******************************************************************
-PROGRAM LW_1_Term !  06-08-2022 ; 31 Dec.,2003.
-USE INITIAL_PT_KD
+PROGRAM LW_1_Term
+USE atmosphere
 REAL*8 VSTART,VFINISH,DIAP,FUP,FDO,S1,S2,FLUXUP,FLUXDO,V1,V2,VSOLD
 PARAMETER(DIAP=10.D0,iout=47) 
 CHARACTER FI*20,KISHKANAME*50

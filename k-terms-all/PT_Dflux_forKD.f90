@@ -53,7 +53,7 @@
 
 	NTT	= STEP/H + 1.01
 	NT=NQ
-	IF(NT /= NTT) PAUSE 0
+	IF(NT /= NTT) STOP 0
 !*
 				DELTAV=STEP
 				NTMAX=NT
