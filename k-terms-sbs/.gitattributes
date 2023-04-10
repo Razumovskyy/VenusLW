@@ -1,0 +1,11 @@
+*.f90 linguist-language=Fortran
+*.f95 linguist-language=Fortran
+*.sh linguist-language=Bash
+*.py linguist-language=Python
+*.1_ linguist-language=text
+*.2_ linguist-language=text
+*.3_ linguist-language=text
+*.Ven linguist-language=text
+*.__1 linguist-language=text
+*.__2 linguist-language=text
+*.__3 linguist-language=text
