@@ -1,6 +1,6 @@
 # **VenusLW**
 
-Getting k-distributions for radiative transfer in Venus Atmosphere in longwave region (10 - 10000 cm$^{-1}$)
+Getting k-distributions for radiative transfer in Venus Atmosphere in longwave region (10 - 6000 cm$^{-1}$)
 
 ## **Prerequistes:**
 
