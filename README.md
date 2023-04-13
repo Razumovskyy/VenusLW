@@ -4,7 +4,7 @@
 
 Getting k-distributions for radiative transfer in Venus Atmosphere in longwave region (10 - 6000 cm<sup>-1</sup>). After running the executables one can obtain the next k-term in a given spectral band. 
 
-Note:
+Note
 
 - obtaining k-terms is an iterative process and requires running this programs several times.
 - resulting parameterizations are strongly affected by input atmospheric profile and chosen spectroscopy (look in PTTables repository).
@@ -35,7 +35,6 @@ Set values of thresholds of absorption coeffcient for lower and upper atmospheri
 
     0.0 1
     1e15 50
-
 
 3. **Run the executables**
 
