@@ -6,7 +6,8 @@ SUBROUTINE FLUX_H(FLUXUP,FLUXDO,N_SEP) !( date of 12 April,2002 )
 !*** The LONGWAVE flux calculations by the "fast" technique     ***
 !*** The trapezoid's rule for the integration over an altitude  ***
 !******************************************************************
- USE INITIAL_PT_KD
+ USE atmosphere
+ USE shared_variables
 	IMPLICIT REAL*8 (a-h,o-z)
 	PARAMETER(NSTEP=10,KMAX=NSTEP,DELT_CRT=0.0001, 	& 
 	STEP=1.D0,H=1.D0/2048.D0,NQ=2049,PI=3.141593,TLIM=0.001,	&
@@ -266,7 +267,7 @@ SUBROUTINE FLUX_H(FLUXUP,FLUXDO,N_SEP) !( date of 12 April,2002 )
 END       
 !***************************************************
 function TEMPER(ZZZ)
-	USE INITIAL_PT_KD
+	USE atmosphere
 	REAL*8 temper
 !*
 	DO J=2,JMAX

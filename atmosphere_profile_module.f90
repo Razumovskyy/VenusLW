@@ -1,6 +1,7 @@
 MODULE atmosphere
+	USE shared_variables
 	IMPLICIT NONE
-	INTEGER, PARAMETER :: numSpecPoints=20481, maxNumComponents=49, maxNumLevels=200
+	
 	CHARACTER(LEN=15) :: LINE_PATH
 	CHARACTER(LEN=80) :: atmosphereTitle ! title or description of the atmosphere profile file
 	CHARACTER(LEN=5) :: molecName(maxNumComponents) ! array of molecule names presented in atmosphere profile
@@ -8,8 +9,6 @@ MODULE atmosphere
     
 	REAL(KIND=4) :: height(maxNumLevels),pressure(maxNumLevels),temperature(maxNumLevels) ! gas profile data from file
     REAL(KIND=4) :: concentration(10, maxNumLevels) ! components concentrations
-	REAL(KIND=4) :: RK(numSpecPoints), RABMA(numSpecPoints, maxNumLevels) ! to be explained later
-	!! use selected_real_kind() later
 
 	CONTAINS
 	SUBROUTINE read_atm_profile(atmosphereFile) ! Information from atmospheric profile
