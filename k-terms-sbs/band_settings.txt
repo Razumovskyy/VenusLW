@@ -1,5 +1,0 @@
-__1  
-Ven    
-400.0D0    600.0D0     
-S2  
-SO2_gas_profile.dat   
